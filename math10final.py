@@ -233,7 +233,7 @@ line_100 = alt.Chart(df).mark_line(
     y='rolling_mean_100:Q'
 )
 line_200 = alt.Chart(df).mark_line(
-    color=color_200,
+    color='red',
     size=3
 ).transform_window(
     rolling_mean_200='mean(Close)',
@@ -243,7 +243,7 @@ line_200 = alt.Chart(df).mark_line(
     y='rolling_mean_200:Q',
 
 )
-st.altair_chart(line_200)
+st.altair_chart((line_200.interactive()))
 
 
 st.markdown("* We can see that the moving average lines are not fluctuate as intensively as the daily price does. They show an average trend of the stock.") 
